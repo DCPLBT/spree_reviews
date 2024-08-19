@@ -19,6 +19,7 @@ module Spree
       save
     end
 
-    ::Spree::Product.prepend self if ::Spree::Product.included_modules.exclude?(self)
   end
 end
+
+Spree::Product.prepend Spree::ProductDecorator
